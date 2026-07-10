@@ -9,29 +9,13 @@
 }
 
 /* ============================================ */
-/* VARIABLES DE COLORES (Fáciles de modificar)  */
-/* ============================================ */
-:root {
-    --color-primario: #2563eb;
-    --color-primario-oscuro: #1d4ed8;
-    --color-secundario: #10b981;
-    --color-texto: #1f2937;
-    --color-texto-claro: #6b7280;
-    --color-fondo: #f9fafb;
-    --color-blanco: #ffffff;
-    --color-borde: #e5e7eb;
-    --sombra-suave: 0 2px 4px rgba(0, 0, 0, 0.1);
-    --sombra-media: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* ============================================ */
 /* ESTILOS BASE DEL CUERPO                      */
 /* ============================================ */
 body {
-    font-family: 'Roboto', Arial, sans-serif;
+    font-family: 'Georgia', serif;
     line-height: 1.6;
-    color: var(--color-texto);
-    background-color: var(--color-fondo);
+    color: #333;
+    background-color: #faf5f0;
 }
 
 /* ============================================ */
@@ -47,8 +31,8 @@ body {
 /* ENCABEZADO - HEADER                          */
 /* ============================================ */
 #header-principal {
-    background-color: var(--color-blanco);
-    box-shadow: var(--sombra-suave);
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -65,8 +49,9 @@ body {
 
 /* ---------- LOGO ---------- */
 .logo h1 {
-    font-size: 24px;
-    color: var(--color-primario);
+    font-size: 28px;
+    color: #8B4513;
+    font-style: italic;
 }
 
 /* ---------- MENÚ DE NAVEGACIÓN ---------- */
@@ -78,21 +63,18 @@ body {
 
 .menu a {
     text-decoration: none;
-    color: var(--color-texto);
+    color: #333;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
-.menu a:hover,
-.menu a.activo {
-    color: var(--color-primario);
+.menu a:hover {
+    color: #8B4513;
 }
 
 /* ---------- BOTÓN MENÚ MÓVIL ---------- */
 .btn-menu {
     display: none;
-    flex-direction: column;
-    gap: 5px;
     background: none;
     border: none;
     cursor: pointer;
@@ -103,7 +85,8 @@ body {
     display: block;
     width: 25px;
     height: 3px;
-    background-color: var(--color-texto);
+    background-color: #333;
+    margin: 5px 0;
     transition: all 0.3s ease;
 }
 
@@ -111,8 +94,8 @@ body {
 /* SECCIÓN HÉROE                                */
 /* ============================================ */
 .seccion-heroe {
-    background: linear-gradient(135deg, var(--color-primario), var(--color-primario-oscuro));
-    color: var(--color-blanco);
+    background: linear-gradient(135deg, #8B4513, #D2691E);
+    color: white;
     padding: 100px 20px;
     text-align: center;
 }
@@ -125,6 +108,7 @@ body {
 .seccion-heroe h2 {
     font-size: 48px;
     margin-bottom: 20px;
+    font-style: italic;
 }
 
 .seccion-heroe p {
@@ -133,19 +117,20 @@ body {
     opacity: 0.9;
 }
 
+/* ---------- BOTÓN CTA ---------- */
 .boton-cta {
     display: inline-block;
-    background-color: var(--color-secundario);
-    color: var(--color-blanco);
+    background-color: #FFD700;
+    color: #333;
     padding: 15px 30px;
     border-radius: 5px;
     text-decoration: none;
-    font-weight: 700;
-    transition: background-color 0.3s ease;
+    font-weight: bold;
+    transition: transform 0.3s ease;
 }
 
 .boton-cta:hover {
-    background-color: #059669;
+    transform: scale(1.05);
 }
 
 /* ============================================ */
@@ -155,7 +140,8 @@ body {
     text-align: center;
     font-size: 36px;
     margin-bottom: 40px;
-    color: var(--color-texto);
+    color: #8B4513;
+    font-style: italic;
 }
 
 /* ============================================ */
@@ -163,7 +149,7 @@ body {
 /* ============================================ */
 .seccion-nosotros {
     padding: 80px 0;
-    background-color: var(--color-blanco);
+    background-color: white;
 }
 
 .grid-nosotros {
@@ -175,26 +161,28 @@ body {
 
 .texto-nosotros p {
     margin-bottom: 15px;
-    color: var(--color-texto-claro);
+    color: #666;
+    font-size: 16px;
 }
 
+/* ---------- PLACEHOLDER DE IMAGEN ---------- */
 .placeholder-imagen {
-    background-color: var(--color-fondo);
-    border: 2px dashed var(--color-borde);
+    background-color: #faf5f0;
+    border: 2px dashed #D2691E;
     border-radius: 10px;
     height: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--color-texto-claro);
+    font-size: 80px;
 }
 
 /* ============================================ */
-/* SECCIÓN SERVICIOS                            */
+/* SECCIÓN SERVICIOS - PRODUCTOS                */
 /* ============================================ */
 .seccion-servicios {
     padding: 80px 0;
-    background-color: var(--color-fondo);
+    background-color: #faf5f0;
 }
 
 .grid-servicios {
@@ -204,10 +192,10 @@ body {
 }
 
 .tarjeta-servicio {
-    background-color: var(--color-blanco);
+    background-color: white;
     padding: 30px;
     border-radius: 10px;
-    box-shadow: var(--sombra-media);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: transform 0.3s ease;
 }
@@ -222,12 +210,12 @@ body {
 }
 
 .tarjeta-servicio h3 {
+    color: #8B4513;
     margin-bottom: 10px;
-    color: var(--color-primario);
 }
 
 .tarjeta-servicio p {
-    color: var(--color-texto-claro);
+    color: #666;
 }
 
 /* ============================================ */
@@ -235,7 +223,7 @@ body {
 /* ============================================ */
 .seccion-contacto {
     padding: 80px 0;
-    background-color: var(--color-blanco);
+    background-color: white;
 }
 
 .formulario-contacto {
@@ -253,51 +241,52 @@ body {
 }
 
 .campo-formulario label {
-    font-weight: 500;
-    color: var(--color-texto);
+    font-weight: bold;
+    color: #8B4513;
 }
 
 .campo-formulario input,
 .campo-formulario textarea {
-    padding: 10px;
-    border: 1px solid var(--color-borde);
+    padding: 12px;
+    border: 2px solid #ddd;
     border-radius: 5px;
-    font-family: inherit;
     font-size: 16px;
+    font-family: inherit;
     transition: border-color 0.3s ease;
 }
 
 .campo-formulario input:focus,
 .campo-formulario textarea:focus {
     outline: none;
-    border-color: var(--color-primario);
+    border-color: #8B4513;
 }
 
+/* ---------- BOTÓN ENVIAR ---------- */
 .boton-enviar {
-    background-color: var(--color-primario);
-    color: var(--color-blanco);
+    background-color: #8B4513;
+    color: white;
     padding: 15px;
     border: none;
     border-radius: 5px;
     font-size: 16px;
-    font-weight: 700;
+    font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .boton-enviar:hover {
-    background-color: var(--color-primario-oscuro);
+    background-color: #D2691E;
 }
 
 /* ---------- MENSAJE DE ÉXITO ---------- */
 .mensaje-exito {
     text-align: center;
     padding: 20px;
-    background-color: #d1fae5;
-    color: var(--color-secundario);
+    background-color: #d4edda;
+    color: #155724;
     border-radius: 5px;
     margin-top: 20px;
-    font-weight: 500;
+    font-weight: bold;
 }
 
 .oculto {
@@ -308,8 +297,8 @@ body {
 /* PIE DE PÁGINA - FOOTER                       */
 /* ============================================ */
 #footer-principal {
-    background-color: var(--color-texto);
-    color: var(--color-blanco);
+    background-color: #333;
+    color: white;
     padding: 30px 0;
 }
 
@@ -329,24 +318,108 @@ body {
 
 .red-social {
     display: inline-block;
-    background-color: rgba(255, 255, 255, 0.2);
-    color: var(--color-blanco);
-    padding: 5px 10px;
+    background-color: #8B4513;
+    color: white;
+    padding: 8px 15px;
     border-radius: 3px;
     text-decoration: none;
     transition: background-color 0.3s ease;
 }
 
 .red-social:hover {
-    background-color: var(--color-primario);
+    background-color: #D2691E;
+}
+
+/* ============================================ */
+/* BURBUJAS FLOTANTES DE REDES SOCIALES         */
+/* ============================================ */
+.burbujas-flotantes {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 999;
+}
+
+.burbuja {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    animation: flotar 3s ease-in-out infinite;
+    position: relative;
+}
+
+/* ---------- ANIMACIÓN DE FLOTACIÓN ---------- */
+@keyframes flotar {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* ---------- RETRASO DIFERENTE PARA CADA BURBUJA ---------- */
+.burbuja:nth-child(1) {
+    animation-delay: 0s;
+    background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+}
+
+.burbuja:nth-child(2) {
+    animation-delay: 0.5s;
+    background-color: #000000;
+}
+
+.burbuja:nth-child(3) {
+    animation-delay: 1s;
+    background-color: #25D366;
+}
+
+/* ---------- EFECTO HOVER ---------- */
+.burbuja:hover {
+    transform: scale(1.2);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    animation: none;
+}
+
+/* ---------- TOOLTIP AL PASAR EL MOUSE ---------- */
+.burbuja::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    right: 70px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.burbuja:hover::after {
+    opacity: 1;
 }
 
 /* ============================================ */
 /* RESPONSIVE - ADAPTACIÓN MÓVIL Y TABLET       */
 /* ============================================ */
+
+/* ---------- TABLET (768px o menos) ---------- */
 @media (max-width: 768px) {
     
-    /* ---------- MENÚ MÓVIL ---------- */
+    /* Menú móvil */
     .menu {
         display: none;
         flex-direction: column;
@@ -354,9 +427,10 @@ body {
         top: 70px;
         left: 0;
         right: 0;
-        background-color: var(--color-blanco);
-        box-shadow: var(--sombra-media);
+        background-color: white;
         padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
     }
     
     .menu.activo {
@@ -364,32 +438,46 @@ body {
     }
     
     .btn-menu {
-        display: flex;
+        display: block;
     }
     
-    /* ---------- HÉROE ---------- */
+    /* Héroe */
     .seccion-heroe h2 {
         font-size: 36px;
     }
     
-    /* ---------- GRID NOSOTROS ---------- */
-    .grid-nosotros {
-        grid-template-columns: 1fr;
-    }
-    
-    /* ---------- GRID SERVICIOS ---------- */
+    /* Grids */
+    .grid-nosotros,
     .grid-servicios {
         grid-template-columns: 1fr;
     }
     
-    /* ---------- FOOTER ---------- */
+    /* Footer */
     .contenedor-footer {
         flex-direction: column;
         gap: 20px;
         text-align: center;
     }
+    
+    /* Burbujas */
+    .burbujas-flotantes {
+        bottom: 20px;
+        right: 20px;
+        gap: 12px;
+    }
+    
+    .burbuja {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+    
+    .burbuja::after {
+        display: none;
+    }
 }
 
+/* ---------- MÓVIL PEQUEÑO (480px o menos) ---------- */
 @media (max-width: 480px) {
     .seccion-heroe h2 {
         font-size: 28px;
@@ -397,5 +485,17 @@ body {
     
     .seccion-heroe {
         padding: 60px 20px;
+    }
+    
+    .burbujas-flotantes {
+        bottom: 15px;
+        right: 15px;
+        gap: 10px;
+    }
+    
+    .burbuja {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
     }
 }
