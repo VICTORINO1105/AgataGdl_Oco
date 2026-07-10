@@ -1,2 +1,0 @@
-# AgataGdl_Oco
-AgataGdl
