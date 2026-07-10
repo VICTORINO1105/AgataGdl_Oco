@@ -3,16 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgataGdl - Joyería Fina</title>
+    <title>Ágata GDL - Joyería Fina Artesanal</title>
     
-    <!-- TODO EL CSS AQUÍ DENTRO -->
+    <!-- ============================================ -->
+    <!-- TODO EL CSS AQUÍ DENTRO                      -->
+    <!-- ============================================ -->
     <style>
+        /* ============================================ */
+        /* RESETEO GENERAL                              */
+        /* ============================================ */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         
+        /* ============================================ */
+        /* ESTILOS BASE DEL CUERPO                      */
+        /* ============================================ */
         body {
             font-family: 'Georgia', serif;
             line-height: 1.6;
@@ -26,10 +34,12 @@
             padding: 0 20px;
         }
         
-        /* HEADER */
+        /* ============================================ */
+        /* ENCABEZADO - HEADER                          */
+        /* ============================================ */
         #header-principal {
             background-color: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -50,6 +60,7 @@
             font-style: italic;
         }
         
+        /* ---------- MENÚ DE NAVEGACIÓN ---------- */
         .menu {
             display: flex;
             list-style: none;
@@ -67,11 +78,13 @@
             color: #8B4513;
         }
         
+        /* ---------- BOTÓN MENÚ MÓVIL ---------- */
         .btn-menu {
             display: none;
             background: none;
             border: none;
             cursor: pointer;
+            padding: 5px;
         }
         
         .btn-menu span {
@@ -80,14 +93,22 @@
             height: 3px;
             background-color: #333;
             margin: 5px 0;
+            transition: all 0.3s ease;
         }
         
-        /* HERO */
+        /* ============================================ */
+        /* SECCIÓN HÉROE                                */
+        /* ============================================ */
         .seccion-heroe {
             background: linear-gradient(135deg, #8B4513, #D2691E);
             color: white;
             padding: 100px 20px;
             text-align: center;
+        }
+        
+        .contenedor-heroe {
+            max-width: 800px;
+            margin: 0 auto;
         }
         
         .seccion-heroe h2 {
@@ -99,6 +120,7 @@
         .seccion-heroe p {
             font-size: 18px;
             margin-bottom: 30px;
+            opacity: 0.9;
         }
         
         .boton-cta {
@@ -116,7 +138,9 @@
             transform: scale(1.05);
         }
         
-        /* SECCIONES */
+        /* ============================================ */
+        /* TÍTULOS DE SECCIÓN                           */
+        /* ============================================ */
         .titulo-seccion {
             text-align: center;
             font-size: 36px;
@@ -125,6 +149,9 @@
             font-style: italic;
         }
         
+        /* ============================================ */
+        /* SECCIÓN NOSOTROS                             */
+        /* ============================================ */
         .seccion-nosotros {
             padding: 80px 0;
             background-color: white;
@@ -137,6 +164,12 @@
             align-items: center;
         }
         
+        .texto-nosotros p {
+            margin-bottom: 15px;
+            color: #666;
+            font-size: 16px;
+        }
+        
         .placeholder-imagen {
             background-color: #faf5f0;
             border: 2px dashed #D2691E;
@@ -145,10 +178,12 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 48px;
+            font-size: 80px;
         }
         
-        /* SERVICIOS */
+        /* ============================================ */
+        /* SECCIÓN SERVICIOS                            */
+        /* ============================================ */
         .seccion-servicios {
             padding: 80px 0;
             background-color: #faf5f0;
@@ -164,7 +199,7 @@
             background-color: white;
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             text-align: center;
             transition: transform 0.3s ease;
         }
@@ -183,7 +218,13 @@
             margin-bottom: 10px;
         }
         
-        /* CONTACTO */
+        .tarjeta-servicio p {
+            color: #666;
+        }
+        
+        /* ============================================ */
+        /* SECCIÓN CONTACTO - FORMULARIO                */
+        /* ============================================ */
         .seccion-contacto {
             padding: 80px 0;
             background-color: white;
@@ -214,6 +255,8 @@
             border: 2px solid #ddd;
             border-radius: 5px;
             font-size: 16px;
+            font-family: inherit;
+            transition: border-color 0.3s ease;
         }
         
         .campo-formulario input:focus,
@@ -229,6 +272,7 @@
             border: none;
             border-radius: 5px;
             font-size: 16px;
+            font-weight: bold;
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
@@ -244,13 +288,16 @@
             color: #155724;
             border-radius: 5px;
             margin-top: 20px;
+            font-weight: bold;
         }
         
         .oculto {
             display: none;
         }
         
-        /* FOOTER */
+        /* ============================================ */
+        /* PIE DE PÁGINA - FOOTER                       */
+        /* ============================================ */
         #footer-principal {
             background-color: #333;
             color: white;
@@ -278,14 +325,101 @@
             padding: 8px 15px;
             border-radius: 3px;
             text-decoration: none;
+            transition: background-color 0.3s ease;
         }
         
         .red-social:hover {
             background-color: #D2691E;
         }
         
-        /* RESPONSIVE */
+        /* ============================================ */
+        /* BURBUJAS FLOTANTES DE REDES SOCIALES         */
+        /* ============================================ */
+        .burbujas-flotantes {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 999;
+        }
+        
+        .burbuja {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            animation: flotar 3s ease-in-out infinite;
+            position: relative;
+        }
+        
+        /* Efecto de flotación */
+        @keyframes flotar {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        /* Retraso diferente para cada burbuja */
+        .burbuja:nth-child(1) {
+            animation-delay: 0s;
+            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+        }
+        
+        .burbuja:nth-child(2) {
+            animation-delay: 0.5s;
+            background-color: #000000;
+        }
+        
+        .burbuja:nth-child(3) {
+            animation-delay: 1s;
+            background-color: #25D366;
+        }
+        
+        /* Efecto hover */
+        .burbuja:hover {
+            transform: scale(1.2);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+            animation: none;
+        }
+        
+        /* Tooltip al pasar el mouse */
+        .burbuja::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            right: 70px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        
+        .burbuja:hover::after {
+            opacity: 1;
+        }
+        
+        /* ============================================ */
+        /* RESPONSIVE - ADAPTACIÓN MÓVIL Y TABLET       */
+        /* ============================================ */
         @media (max-width: 768px) {
+            
+            /* Menú móvil */
             .menu {
                 display: none;
                 flex-direction: column;
@@ -295,7 +429,8 @@
                 right: 0;
                 background-color: white;
                 padding: 20px;
-                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                z-index: 1000;
             }
             
             .menu.activo {
@@ -306,32 +441,79 @@
                 display: block;
             }
             
+            /* Héroe */
+            .seccion-heroe h2 {
+                font-size: 36px;
+            }
+            
+            /* Grids */
             .grid-nosotros,
             .grid-servicios {
                 grid-template-columns: 1fr;
             }
             
-            .seccion-heroe h2 {
-                font-size: 36px;
-            }
-            
+            /* Footer */
             .contenedor-footer {
                 flex-direction: column;
                 gap: 20px;
                 text-align: center;
+            }
+            
+            /* Burbujas */
+            .burbujas-flotantes {
+                bottom: 20px;
+                right: 20px;
+                gap: 12px;
+            }
+            
+            .burbuja {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+            
+            .burbuja::after {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .seccion-heroe h2 {
+                font-size: 28px;
+            }
+            
+            .seccion-heroe {
+                padding: 60px 20px;
+            }
+            
+            .burbujas-flotantes {
+                bottom: 15px;
+                right: 15px;
+                gap: 10px;
+            }
+            
+            .burbuja {
+                width: 45px;
+                height: 45px;
+                font-size: 18px;
             }
         }
     </style>
 </head>
 <body>
     
-    <!-- HEADER -->
+    <!-- ============================================ -->
+    <!-- ENCABEZADO PRINCIPAL (HEADER)                -->
+    <!-- ============================================ -->
     <header id="header-principal">
         <div class="contenedor-header">
+            
+            <!-- ---------- LOGO ---------- -->
             <div class="logo">
                 <h1>Ágata GDL</h1>
             </div>
             
+            <!-- ---------- MENÚ DE NAVEGACIÓN ---------- -->
             <nav id="navegacion-principal">
                 <ul class="menu">
                     <li><a href="#inicio">Inicio</a></li>
@@ -340,7 +522,8 @@
                     <li><a href="#contacto">Contacto</a></li>
                 </ul>
                 
-                <button id="btn-menu-movil" class="btn-menu">
+                <!-- ---------- BOTÓN MENÚ MÓVIL ---------- -->
+                <button id="btn-menu-movil" class="btn-menu" aria-label="Abrir menú">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -349,8 +532,12 @@
         </div>
     </header>
     
-    <!-- MAIN -->
+    <!-- ============================================ -->
+    <!-- CONTENIDO PRINCIPAL (MAIN)                   -->
+    <!-- ============================================ -->
     <main>
+        
+        <!-- ========== SECCIÓN HÉROE ========== -->
         <section id="inicio" class="seccion-heroe">
             <div class="contenedor-heroe">
                 <h2>Joyería Fina Artesanal</h2>
@@ -359,6 +546,7 @@
             </div>
         </section>
         
+        <!-- ========== SECCIÓN NOSOTROS ========== -->
         <section id="nosotros" class="seccion-nosotros">
             <div class="contenedor">
                 <h2 class="titulo-seccion">Sobre Nosotros</h2>
@@ -374,75 +562,140 @@
             </div>
         </section>
         
+        <!-- ========== SECCIÓN SERVICIOS ========== -->
         <section id="servicios" class="seccion-servicios">
             <div class="contenedor">
                 <h2 class="titulo-seccion">Nuestros Productos</h2>
                 <div class="grid-servicios">
+                    
+                    <!-- Tarjeta de Producto 1 -->
                     <div class="tarjeta-servicio">
                         <div class="icono-servicio">💍</div>
                         <h3>Anillos</h3>
                         <p>Anillos de compromiso y colección en oro y plata</p>
                     </div>
                     
+                    <!-- Tarjeta de Producto 2 -->
                     <div class="tarjeta-servicio">
                         <div class="icono-servicio">📿</div>
                         <h3>Collares</h3>
                         <p>Collares elegantes con piedras preciosas</p>
                     </div>
                     
+                    <!-- Tarjeta de Producto 3 -->
                     <div class="tarjeta-servicio">
                         <div class="icono-servicio">✨</div>
                         <h3>Pulseras</h3>
                         <p>Pulseras artesanales con diseños exclusivos</p>
                     </div>
+                    
                 </div>
             </div>
         </section>
         
+        <!-- ========== SECCIÓN CONTACTO ========== -->
         <section id="contacto" class="seccion-contacto">
             <div class="contenedor">
                 <h2 class="titulo-seccion">Contáctanos</h2>
+                
+                <!-- Formulario de contacto -->
                 <form id="formulario-contacto" class="formulario-contacto">
                     <div class="campo-formulario">
                         <label for="nombre">Nombre:</label>
                         <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
                     </div>
+                    
                     <div class="campo-formulario">
                         <label for="email">Correo Electrónico:</label>
                         <input type="email" id="email" name="email" placeholder="tu@email.com" required>
                     </div>
+                    
                     <div class="campo-formulario">
                         <label for="mensaje">Mensaje:</label>
                         <textarea id="mensaje" name="mensaje" rows="5" placeholder="¿En qué podemos ayudarte?" required></textarea>
                     </div>
+                    
                     <button type="submit" class="boton-enviar">Enviar Mensaje</button>
                 </form>
+                
+                <!-- Mensaje de éxito (oculto por defecto) -->
                 <div id="mensaje-exito" class="mensaje-exito oculto">
                     ¡Mensaje enviado con éxito! Te contactaremos pronto.
                 </div>
             </div>
         </section>
+        
     </main>
     
-    <!-- FOOTER -->
+    <!-- ============================================ -->
+    <!-- PIE DE PÁGINA (FOOTER)                       -->
+    <!-- ============================================ -->
     <footer id="footer-principal">
         <div class="contenedor-footer">
             <div class="info-footer">
                 <p>&copy; 2024 Ágata GDL - Joyería Fina Artesanal</p>
             </div>
             <div class="redes-sociales">
-                <a href="#" class="red-social">FB</a>
-                <a href="#" class="red-social">IG</a>
-                <a href="#" class="red-social">WA</a>
+                <a href="#" class="red-social" aria-label="Facebook">FB</a>
+                <a href="#" class="red-social" aria-label="Instagram">IG</a>
+                <a href="#" class="red-social" aria-label="WhatsApp">WA</a>
             </div>
         </div>
     </footer>
     
-    <!-- JAVASCRIPT AQUÍ DENTRO -->
+    <!-- ============================================ -->
+    <!-- BURBUJAS FLOTANTES DE REDES SOCIALES          -->
+    <!-- ============================================ -->
+    <div class="burbujas-flotantes">
+        
+        <!-- Burbuja de Instagram -->
+        <!-- CAMBIA 'TU_USUARIO' por tu nombre de usuario de Instagram -->
+        <a href="https://www.instagram.com/TU_USUARIO/" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="burbuja" 
+           data-tooltip="Instagram"
+           aria-label="Síguenos en Instagram">
+            📷
+        </a>
+        
+        <!-- Burbuja de TikTok -->
+        <!-- CAMBIA 'TU_USUARIO' por tu nombre de usuario de TikTok -->
+        <a href="https://www.tiktok.com/@TU_USUARIO" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="burbuja" 
+           data-tooltip="TikTok"
+           aria-label="Síguenos en TikTok">
+            🎵
+        </a>
+        
+        <!-- Burbuja de WhatsApp -->
+        <!-- CAMBIA 'TUNUMERO' por tu número de WhatsApp con código de país -->
+        <!-- Ejemplo para México: 5213312345678 -->
+        <a href="https://wa.me/TUNUMERO" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="burbuja" 
+           data-tooltip="WhatsApp"
+           aria-label="Chatea por WhatsApp">
+            💬
+        </a>
+        
+    </div>
+    
+    <!-- ============================================ -->
+    <!-- JAVASCRIPT                                   -->
+    <!-- ============================================ -->
     <script>
+        // ============================================
+        // ESPERAR A QUE EL DOM ESTÉ COMPLETAMENTE CARGADO
+        // ============================================
         document.addEventListener('DOMContentLoaded', function() {
             
-            // Menú móvil
+            // ============================================
+            // MENÚ MÓVIL - FUNCIONALIDAD DE ABRIR/CERRAR
+            // ============================================
             const btnMenuMovil = document.getElementById('btn-menu-movil');
             const menuNavegacion = document.querySelector('.menu');
             
@@ -451,6 +704,7 @@
                     menuNavegacion.classList.toggle('activo');
                 });
                 
+                // Cerrar menú al hacer clic en un enlace
                 const enlacesMenu = menuNavegacion.querySelectorAll('a');
                 enlacesMenu.forEach(enlace => {
                     enlace.addEventListener('click', () => {
@@ -459,45 +713,74 @@
                 });
             }
             
-            // Formulario
+            // ============================================
+            // FORMULARIO DE CONTACTO - VALIDACIÓN Y ENVÍO
+            // ============================================
             const formulario = document.getElementById('formulario-contacto');
             const mensajeExito = document.getElementById('mensaje-exito');
             
             if (formulario) {
                 formulario.addEventListener('submit', function(evento) {
+                    // Prevenir el envío real del formulario
                     evento.preventDefault();
                     
+                    // Obtener valores de los campos
                     const nombre = document.getElementById('nombre').value.trim();
                     const email = document.getElementById('email').value.trim();
                     const mensaje = document.getElementById('mensaje').value.trim();
                     
+                    // Validar campos obligatorios
                     if (!nombre || !email || !mensaje) {
-                        alert('Por favor, completa todos los campos.');
+                        alert('Por favor, completa todos los campos obligatorios.');
                         return;
                     }
                     
+                    // Validar formato de email
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(email)) {
+                        alert('Por favor, ingresa un correo electrónico válido.');
+                        return;
+                    }
+                    
+                    // Mostrar mensaje de éxito
                     mensajeExito.classList.remove('oculto');
+                    
+                    // Limpiar formulario
                     formulario.reset();
                     
+                    // Ocultar mensaje después de 5 segundos
                     setTimeout(() => {
                         mensajeExito.classList.add('oculto');
                     }, 5000);
+                    
+                    // Aquí puedes agregar la lógica para enviar el formulario a tu correo
+                    console.log('Formulario enviado:', { nombre, email, mensaje });
                 });
             }
             
-            // Scroll suave
+            // ============================================
+            // NAVEGACIÓN SUAVE - SCROLL A SECCIONES
+            // ============================================
             const enlacesInternos = document.querySelectorAll('a[href^="#"]');
+            
             enlacesInternos.forEach(enlace => {
                 enlace.addEventListener('click', function(evento) {
                     evento.preventDefault();
+                    
                     const idSeccion = this.getAttribute('href');
                     const seccion = document.querySelector(idSeccion);
+                    
                     if (seccion) {
-                        seccion.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        seccion.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
                     }
                 });
             });
+            
         });
     </script>
+    
 </body>
 </html>
