@@ -1,55 +1,346 @@
 <!DOCTYPE html>
-<!-- ============================================ -->
-<!-- SECCIÓN: CONFIGURACIÓN INICIAL DE LA PÁGINA   -->
-<!-- ============================================ -->
 <html lang="es">
 <head>
-    <!-- ============================================ -->
-    <!-- META TAGS - Configuración para navegadores    -->
-    <!-- ============================================ -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Página web de ejemplo compatible con Google Chrome">
-    <meta name="author" content="Tu Nombre">
-    <title>Mi Página Web | Chrome Compatible</title>
+    <title>AgataGdl - Joyería Fina</title>
     
-    <!-- ============================================ -->
-    <!-- ENLACE A HOJA DE ESTILOS CSS                  -->
-    <!-- ============================================ -->
-    <link rel="stylesheet" href="css/estilo.css">
-    
-    <!-- ============================================ -->
-    <!-- FUENTE DE GOOGLE (Opcional)                   -->
-    <!-- ============================================ -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- TODO EL CSS AQUÍ DENTRO -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #faf5f0;
+        }
+        
+        .contenedor {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* HEADER */
+        #header-principal {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .contenedor-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+        }
+        
+        .logo h1 {
+            font-size: 28px;
+            color: #8B4513;
+            font-style: italic;
+        }
+        
+        .menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .menu a:hover {
+            color: #8B4513;
+        }
+        
+        .btn-menu {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-menu span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: #333;
+            margin: 5px 0;
+        }
+        
+        /* HERO */
+        .seccion-heroe {
+            background: linear-gradient(135deg, #8B4513, #D2691E);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+        
+        .seccion-heroe h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .seccion-heroe p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        
+        .boton-cta {
+            display: inline-block;
+            background-color: #FFD700;
+            color: #333;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+        
+        .boton-cta:hover {
+            transform: scale(1.05);
+        }
+        
+        /* SECCIONES */
+        .titulo-seccion {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: #8B4513;
+            font-style: italic;
+        }
+        
+        .seccion-nosotros {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .grid-nosotros {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .placeholder-imagen {
+            background-color: #faf5f0;
+            border: 2px dashed #D2691E;
+            border-radius: 10px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+        }
+        
+        /* SERVICIOS */
+        .seccion-servicios {
+            padding: 80px 0;
+            background-color: #faf5f0;
+        }
+        
+        .grid-servicios {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .tarjeta-servicio {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .tarjeta-servicio:hover {
+            transform: translateY(-5px);
+        }
+        
+        .icono-servicio {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+        
+        .tarjeta-servicio h3 {
+            color: #8B4513;
+            margin-bottom: 10px;
+        }
+        
+        /* CONTACTO */
+        .seccion-contacto {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .formulario-contacto {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .campo-formulario {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        
+        .campo-formulario label {
+            font-weight: bold;
+            color: #8B4513;
+        }
+        
+        .campo-formulario input,
+        .campo-formulario textarea {
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        .campo-formulario input:focus,
+        .campo-formulario textarea:focus {
+            outline: none;
+            border-color: #8B4513;
+        }
+        
+        .boton-enviar {
+            background-color: #8B4513;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .boton-enviar:hover {
+            background-color: #D2691E;
+        }
+        
+        .mensaje-exito {
+            text-align: center;
+            padding: 20px;
+            background-color: #d4edda;
+            color: #155724;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        
+        .oculto {
+            display: none;
+        }
+        
+        /* FOOTER */
+        #footer-principal {
+            background-color: #333;
+            color: white;
+            padding: 30px 0;
+        }
+        
+        .contenedor-footer {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .redes-sociales {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .red-social {
+            display: inline-block;
+            background-color: #8B4513;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 3px;
+            text-decoration: none;
+        }
+        
+        .red-social:hover {
+            background-color: #D2691E;
+        }
+        
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background-color: white;
+                padding: 20px;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            }
+            
+            .menu.activo {
+                display: flex;
+            }
+            
+            .btn-menu {
+                display: block;
+            }
+            
+            .grid-nosotros,
+            .grid-servicios {
+                grid-template-columns: 1fr;
+            }
+            
+            .seccion-heroe h2 {
+                font-size: 36px;
+            }
+            
+            .contenedor-footer {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
     
-    <!-- ============================================ -->
-    <!-- SECCIÓN: ENCABEZADO PRINCIPAL (HEADER)        -->
-    <!-- Aquí va el logo y la navegación principal     -->
-    <!-- ============================================ -->
+    <!-- HEADER -->
     <header id="header-principal">
         <div class="contenedor-header">
-            
-            <!-- ---------- LOGO ---------- -->
             <div class="logo">
-                <h1>Mi Sitio Web</h1>
+                <h1>Ágata GDL</h1>
             </div>
             
-            <!-- ---------- MENÚ DE NAVEGACIÓN ---------- -->
             <nav id="navegacion-principal">
                 <ul class="menu">
-                    <li><a href="#inicio" class="activo">Inicio</a></li>
+                    <li><a href="#inicio">Inicio</a></li>
                     <li><a href="#nosotros">Nosotros</a></li>
-                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#servicios">Productos</a></li>
                     <li><a href="#contacto">Contacto</a></li>
                 </ul>
                 
-                <!-- ---------- BOTÓN MENÚ MÓVIL ---------- -->
-                <button id="btn-menu-movil" class="btn-menu" aria-label="Abrir menú">
+                <button id="btn-menu-movil" class="btn-menu">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -58,69 +349,56 @@
         </div>
     </header>
     
-    <!-- ============================================ -->
-    <!-- SECCIÓN: CONTENIDO PRINCIPAL (MAIN)          -->
-    <!-- ============================================ -->
+    <!-- MAIN -->
     <main>
-        
-        <!-- ========== SECCIÓN HÉROE ========== -->
         <section id="inicio" class="seccion-heroe">
             <div class="contenedor-heroe">
-                <h2>Bienvenido a Nuestra Página</h2>
-                <p>Este es un sitio web de ejemplo completamente compatible con Google Chrome y fácil de modificar en Visual Studio.</p>
-                <a href="#contacto" class="boton-cta">Contáctanos Ahora</a>
+                <h2>Joyería Fina Artesanal</h2>
+                <p>Descubre nuestra colección única de joyería hecha a mano con los mejores materiales</p>
+                <a href="#contacto" class="boton-cta">Contáctanos</a>
             </div>
         </section>
         
-        <!-- ========== SECCIÓN NOSOTROS ========== -->
         <section id="nosotros" class="seccion-nosotros">
             <div class="contenedor">
                 <h2 class="titulo-seccion">Sobre Nosotros</h2>
                 <div class="grid-nosotros">
                     <div class="texto-nosotros">
-                        <p>Somos un equipo dedicado a crear soluciones web modernas y eficientes. Nuestra experiencia nos permite desarrollar proyectos adaptados a las necesidades de cada cliente.</p>
-                        <p>Trabajamos con tecnologías actuales y seguimos las mejores prácticas de desarrollo para garantizar resultados óptimos.</p>
+                        <p>Somos Ágata GDL, una marca de joyería fina artesanal ubicada en Guadalajara. Cada pieza es creada con dedicación y pasión por el arte de la joyería.</p>
+                        <p>Utilizamos materiales de la más alta calidad para crear piezas únicas que reflejan elegancia y estilo.</p>
                     </div>
                     <div class="imagen-nosotros">
-                        <div class="placeholder-imagen">
-                            <span>🖼️ Imagen de Nosotros</span>
-                        </div>
+                        <div class="placeholder-imagen">💎</div>
                     </div>
                 </div>
             </div>
         </section>
         
-        <!-- ========== SECCIÓN SERVICIOS ========== -->
         <section id="servicios" class="seccion-servicios">
             <div class="contenedor">
-                <h2 class="titulo-seccion">Nuestros Servicios</h2>
+                <h2 class="titulo-seccion">Nuestros Productos</h2>
                 <div class="grid-servicios">
-                    
-                    <!-- Tarjeta de Servicio 1 -->
                     <div class="tarjeta-servicio">
-                        <div class="icono-servicio">💻</div>
-                        <h3>Desarrollo Web</h3>
-                        <p>Creación de sitios web responsivos y modernos utilizando las últimas tecnologías.</p>
+                        <div class="icono-servicio">💍</div>
+                        <h3>Anillos</h3>
+                        <p>Anillos de compromiso y colección en oro y plata</p>
                     </div>
                     
-                    <!-- Tarjeta de Servicio 2 -->
                     <div class="tarjeta-servicio">
-                        <div class="icono-servicio">📱</div>
-                        <h3>Diseño Responsivo</h3>
-                        <p>Diseños adaptables a cualquier dispositivo: móvil, tablet y escritorio.</p>
+                        <div class="icono-servicio">📿</div>
+                        <h3>Collares</h3>
+                        <p>Collares elegantes con piedras preciosas</p>
                     </div>
                     
-                    <!-- Tarjeta de Servicio 3 -->
                     <div class="tarjeta-servicio">
-                        <div class="icono-servicio">🔧</div>
-                        <h3>Mantenimiento</h3>
-                        <p>Soporte técnico y actualizaciones para mantener tu sitio siempre al día.</p>
+                        <div class="icono-servicio">✨</div>
+                        <h3>Pulseras</h3>
+                        <p>Pulseras artesanales con diseños exclusivos</p>
                     </div>
                 </div>
             </div>
         </section>
         
-        <!-- ========== SECCIÓN CONTACTO ========== -->
         <section id="contacto" class="seccion-contacto">
             <div class="contenedor">
                 <h2 class="titulo-seccion">Contáctanos</h2>
@@ -134,12 +412,8 @@
                         <input type="email" id="email" name="email" placeholder="tu@email.com" required>
                     </div>
                     <div class="campo-formulario">
-                        <label for="asunto">Asunto:</label>
-                        <input type="text" id="asunto" name="asunto" placeholder="Asunto del mensaje">
-                    </div>
-                    <div class="campo-formulario">
                         <label for="mensaje">Mensaje:</label>
-                        <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                        <textarea id="mensaje" name="mensaje" rows="5" placeholder="¿En qué podemos ayudarte?" required></textarea>
                     </div>
                     <button type="submit" class="boton-enviar">Enviar Mensaje</button>
                 </form>
@@ -148,28 +422,82 @@
                 </div>
             </div>
         </section>
-        
     </main>
     
-    <!-- ============================================ -->
-    <!-- SECCIÓN: PIE DE PÁGINA (FOOTER)              -->
-    <!-- ============================================ -->
+    <!-- FOOTER -->
     <footer id="footer-principal">
         <div class="contenedor-footer">
             <div class="info-footer">
-                <p>&copy; 2024 Mi Sitio Web. Todos los derechos reservados.</p>
+                <p>&copy; 2024 Ágata GDL - Joyería Fina Artesanal</p>
             </div>
             <div class="redes-sociales">
-                <a href="#" class="red-social" aria-label="Facebook">FB</a>
-                <a href="#" class="red-social" aria-label="Twitter">TW</a>
-                <a href="#" class="red-social" aria-label="Instagram">IG</a>
+                <a href="#" class="red-social">FB</a>
+                <a href="#" class="red-social">IG</a>
+                <a href="#" class="red-social">WA</a>
             </div>
         </div>
     </footer>
     
-    <!-- ============================================ -->
-    <!-- SCRIPTS DE JAVASCRIPT                        -->
-    <!-- ============================================ -->
-    <script src="js/script.js"></script>
+    <!-- JAVASCRIPT AQUÍ DENTRO -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // Menú móvil
+            const btnMenuMovil = document.getElementById('btn-menu-movil');
+            const menuNavegacion = document.querySelector('.menu');
+            
+            if (btnMenuMovil && menuNavegacion) {
+                btnMenuMovil.addEventListener('click', function() {
+                    menuNavegacion.classList.toggle('activo');
+                });
+                
+                const enlacesMenu = menuNavegacion.querySelectorAll('a');
+                enlacesMenu.forEach(enlace => {
+                    enlace.addEventListener('click', () => {
+                        menuNavegacion.classList.remove('activo');
+                    });
+                });
+            }
+            
+            // Formulario
+            const formulario = document.getElementById('formulario-contacto');
+            const mensajeExito = document.getElementById('mensaje-exito');
+            
+            if (formulario) {
+                formulario.addEventListener('submit', function(evento) {
+                    evento.preventDefault();
+                    
+                    const nombre = document.getElementById('nombre').value.trim();
+                    const email = document.getElementById('email').value.trim();
+                    const mensaje = document.getElementById('mensaje').value.trim();
+                    
+                    if (!nombre || !email || !mensaje) {
+                        alert('Por favor, completa todos los campos.');
+                        return;
+                    }
+                    
+                    mensajeExito.classList.remove('oculto');
+                    formulario.reset();
+                    
+                    setTimeout(() => {
+                        mensajeExito.classList.add('oculto');
+                    }, 5000);
+                });
+            }
+            
+            // Scroll suave
+            const enlacesInternos = document.querySelectorAll('a[href^="#"]');
+            enlacesInternos.forEach(enlace => {
+                enlace.addEventListener('click', function(evento) {
+                    evento.preventDefault();
+                    const idSeccion = this.getAttribute('href');
+                    const seccion = document.querySelector(idSeccion);
+                    if (seccion) {
+                        seccion.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
